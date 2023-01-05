@@ -1,0 +1,350 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt, a4paper, notitlepage, onecolumn]{article}
+\usepackage[UKenglish]{babel}                   % UK style
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}               % Margin size
+\usepackage{hyperref}                           % Coloured hyperlinks
+  \hypersetup{colorlinks = true}
+\usepackage{lmodern}                            % Modern fonts
+\usepackage{graphicx}                           % For figures
+\usepackage[percent]{overpic}                   % For figures with text overlay
+\usepackage{amsmath,amssymb}                    % Mathematical symbols
+\usepackage{mathtools}
+\usepackage{siunitx}                            % SI-units
+%\sisetup{exponent-product = \cdot}             % Dot product instead of cross product
+\sisetup{separate-uncertainty = true}           % Plus-minus uncertainty
+\usepackage{physics}                            % Elegant equations in physics
+\usepackage{booktabs}                           % Nice lines, for instance in tables
+\usepackage[font=small,labelfont=bf]{caption}% Caption
+\usepackage{float}                              % Table do not move with [H].
+\usepackage{subcaption}                         % For subfigures
+\usepackage[en-GB]{datetime2}                   % UK date format
+\usepackage{listings}                           %Source code
+\usepackage{feynmp}                             % Feynman diagrams
+\DeclareGraphicsRule{*}{mps}{*}{}               % Include Feynman diagrams
+\usepackage{scalerel}
+\newcommand{\mylbrace}[2]{\vspace{#2pt}\hspace{6pt}\scaleleftright[\dimexpr5pt+#1\dimexpr0.06pt]{\lbrace}{\rule[\dimexpr2pt-#1\dimexpr0.5pt]{-4pt}{#1pt}}{.}}
+\newcommand{\myrbrace}[2]{\vspace{#2pt}\scaleleftright[\dimexpr5pt+#1\dimexpr0.06pt]{.}{\rule[\dimexpr2pt-#1\dimexpr0.5pt]{-4pt}{#1pt}}{\rbrace}\hspace{6pt}}
+\usepackage{xspace}                             % Fancy LHCb symbols
+\usepackage{upgreek}
+\def\pythia{\mbox{\textsc{Pythia}}\xspace}
+\def\evtgen{\mbox{\textsc{EvtGen}}\xspace}
+\def\photos{\mbox{\textsc{Photos}}\xspace}
+\usepackage{natbib}                      % Set line spacing in references
+\setlength{\bibsep}{1.0pt}
+
+\usepackage{titlesec}                    % Set spacing between sections
+\titlespacing{\section}{0pt}{\baselineskip}{0.1\baselineskip}
+\titlespacing{\subsection}{0pt}{0.1\baselineskip}{0.1\baselineskip}
+\titlespacing{\subsubsection}{0pt}{0.1\baselineskip}{0.1\baselineskip}
+
+\usepackage{enumitem}                    % itemize separation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{DPhil thesis outline}
+\author{}
+\date{}
+%\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\vspace{-1.5cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\begin{itemize}[nosep]
+  \setlength{\itemindent}{0em}
+  \item{Introduction to $C\!P$-violation and measurement of $\gamma$ using $b\to c$ transitions}
+  \item{Introduction to strong-phase measurements at charm factories}
+\end{itemize}
+
+\section{Theoretical background}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{0em}
+    \item{Introduction to $C\!P$-violation}
+  \end{itemize}
+\subsection{The Standard Model and the CKM matrix}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Basic description of the Standard Model}
+    \item[\textendash]{Explanation of how $C\!P$-violation arises from the CKM matrix}
+  \end{itemize}
+\subsection{Measuring \texorpdfstring{$\gamma$}{gamma} using \texorpdfstring{$B^\pm\to Dh^\pm$}{B2Dh} decays}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Theory of $\gamma$ measurements using $B^\pm\to Dh^\pm$ decays}
+  \end{itemize}
+\subsubsection{Measuring \texorpdfstring{$\gamma$}{gamma} using self-conjugate multibody \texorpdfstring{$D$}{D} final states}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Description of BPGGSZ and GLW methods}
+    \item[\textasteriskcentered]{Motivation for model-independent measurement}
+    \item[\textasteriskcentered]{Present yield equations and fit strategy}
+  \end{itemize}
+\subsubsection{Binning scheme of \texorpdfstring{$D^0\to K^+K^-\pi^+\pi^-$}{D02KKpipi}}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Strategy for binning of phase space}
+  \end{itemize}
+\subsection{Strong phases from quantum-correlated \texorpdfstring{$D^0\bar{D^0}$}{D0D0bar} decays}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Theory of quantum-correlated $D^0\bar{D^0}$ processes}
+    \item[\textendash]{Present the double tag method and tag types}
+    \item[\textendash]{Derive yield equations for the strong-phase fits}
+  \end{itemize}
+
+\section{The LHCb experiment}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{0em}
+    \item{Description of the LHCb experiment during Run\,$1$ and $2$}
+    \item{Focus on VELO, tracking system and RICH}
+  \end{itemize}
+
+\section{Analysis of \texorpdfstring{$B^\pm\to[K^+K^-\pi^+\pi^-]_Dh^\pm$}{B2DhD2KKpipi} candidates}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{0em}
+    \item{This section contains the whole LHCb analysis}
+    \item{Status: Paper submitted to EPJC}
+  \end{itemize}
+\subsection{Data selection}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Overview of all the selection requirements}
+  \end{itemize}
+\subsubsection{Initial selection requirements}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Simple requirements on triggers, mass windows, momentum and RICH}
+  \end{itemize}
+\subsubsection{Boosted Decision Tree}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Training and test samples}
+    \item[\textasteriskcentered]{Training variables}
+    \item[\textasteriskcentered]{Optimisation of working point}
+  \end{itemize}
+\subsubsection{Final selection requirements}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Flight significance requirement}
+    \item[\textasteriskcentered]{PID requirements}
+    \item[\textasteriskcentered]{$K^0_S$ mass veto}
+    \item[\textasteriskcentered]{Semileptonic $B^\pm$ decay veto}
+    \item[\textasteriskcentered]{Ghost track rejection}
+  \end{itemize}
+\subsection{Background studies}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{For each background, describe the origin, mass shape and yield}
+  \end{itemize}
+\subsubsection{Charmless background}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Rejection with flight significance requirements}
+    \item[\textasteriskcentered]{Residual background estimate using sidebands}
+  \end{itemize}
+\subsubsection{Semileptonic \texorpdfstring{$D$}{D} background}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Overview of all possible decay modes}
+    \item[\textasteriskcentered]{RapidSim studies of shape and yield}
+  \end{itemize}
+\subsubsection{Background from \texorpdfstring{$D^0\to K^-\pi^+\pi^-\pi^+\pi^0$}{D02Kpipipipi0} decays}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Explanation of combined mis-ID and missing particle background}
+    \item[\textasteriskcentered]{RapidSim studies of mass shape and PID requirements in data}
+  \end{itemize}
+\subsubsection{Background from \texorpdfstring{$D^0\to K^-\pi^+\pi^-\pi^+$}{D02Kpipipi} decays}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Present full study of single and triple mis-ID}
+  \end{itemize}
+\subsection{Invariant mass fits}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Outline the fit strategy}
+  \end{itemize}
+\subsubsection{Global invariant mass fit}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Present and describe global mass fit}
+    \item[\textasteriskcentered]{Show the same fit, split by charge}
+  \end{itemize}
+\subsubsection{Binned invariant mass fit}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Describe binned mass fit}
+    \item[\textasteriskcentered]{Show the fitted $C\!P$-violating parameters}
+  \end{itemize}
+\subsection{Systematic uncertainties}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Very brief description of each systematic uncertainty considered}
+  \end{itemize}
+\subsubsection{Strong-phase uncertainties}
+\subsubsection{Bin-dependent mass shapes}
+\subsubsection{Fixed signal shape}
+\subsubsection{PID efficiencies}
+\subsubsection{Fixed yield fractions}
+\subsubsection{Low mass physics effects}
+\subsubsection{Small backgrounds not included in the fit}
+\subsubsection{Fit bias}
+\subsubsection{\texorpdfstring{$D\to K\pi\pi\pi\pi^0$}{D2Kpipipipi0} phase space distribution and mass shape}
+\subsubsection{Charmless backgrounds}
+\subsubsection{Checks of negligible systematic effects}
+\subsubsection{Summary of systematic uncertainties}
+\subsection{Interpretation of in terms of \texorpdfstring{$\gamma$}{gamma}}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Combination and interpretation of $C\!P$-violating observables in terms of $\gamma$}
+    \item[\textendash]{Highlight the difference between model-dependent and independent results}
+    \item[\textendash]{Compare with latest LHCb combination}
+  \end{itemize}
+
+\section{The BESIII experiment}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{0em}
+    \item{Description of the BESIII experiment and the available data sets}
+    \item{Focus on MDC, TOF system and EMC}
+  \end{itemize}
+
+\section{Analysis of \texorpdfstring{$D^0\to K^+K^-\pi^+\pi^-$}{D02KKpipi} strong phases}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{0em}
+    \item{This section contains the whole BESIII analysis}
+    \item{Status: Paper on inclusive phase space measurement submitted to PRD}
+    \item{Plan: Binned analysis is ongoing and is expected to finish at the end of TT23}
+  \end{itemize}
+\subsection{Event selection}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Overview of all the selection requirements}
+  \end{itemize}
+\subsubsection{Particle selection}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Charged pion and kaon track requirements}
+    \item[\textasteriskcentered]{Photon shower requirements}
+    \item[\textasteriskcentered]{Neutral composite particles}
+  \end{itemize}
+\subsubsection{Tag selection}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Reconstruction of fully and partially reconstructed $D$-mesons}
+    \item[\textasteriskcentered]{Final selection of single- and double-tag events}
+    \item[\textasteriskcentered]{Quantum correlated phase space reweighting}
+  \end{itemize}
+\subsection{Yield determinations using mass fits}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Overview of strategy for determining event yields}
+  \end{itemize}
+\subsubsection{Single tag yields}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Description of mass shapes}
+    \item[\textasteriskcentered]{Extraction of single tag yields}
+  \end{itemize}
+\subsubsection{Double tag yields}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Description of mass shapes and fit strategy}
+    \item[\textasteriskcentered]{Simultaneous fit of double tag yields}
+  \end{itemize}
+\subsubsection{Peaking backgrounds}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Determination of background yield and mass shapes from simulation}
+    \item[\textasteriskcentered]{Quantum correlation corrections in double tag yields}
+  \end{itemize}
+\subsection{Systematic uncertainties}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Very brief description of each systematic uncertainty considered}
+  \end{itemize}
+\subsubsection{External parameters}
+\subsubsection{Model dependence}
+\subsubsection{Peaking backgrounds}
+\subsubsection{Single tag yields of \texorpdfstring{$K^0_LX$}{KLX} tags}
+\subsubsection{Efficiency factorisation}
+\subsubsection{\texorpdfstring{$K^0_S$}{KS0} veto}
+\subsubsection{Summary of systematic uncertainties}
+\subsection{Maximum likelihood fit of strong phases}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Description of likelihood function and fitter}
+  \end{itemize}
+\subsubsection{Inclusive phase space measurement}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Present measurement of $F_+$}
+  \end{itemize}
+\subsubsection{Binned phase space measurement}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Present fit results for $c_i$ and $s_i$}
+    \item[\textasteriskcentered]{Comparison with model prediction}
+    \item[\textasteriskcentered]{Evaluation of binning scheme performance and impact on $\gamma$ measurement}
+  \end{itemize}
+
+\section{Analysis of TORCH testbeam PID performance}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{0em}
+    \item{This section contains the whole TORCH analysis}
+    \item{Status: PID likelihood calculation successfully tested on 2018 testbeam data}
+    \item{Plan: Analysis of PID performance using 2022 testbeam data is ongoing and expected to finish at the end of 2023}
+  \end{itemize}
+\subsection{The TORCH detector}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Describe the design, physics and strategy of TORCH}
+  \end{itemize}
+\subsubsection{Physics behind TORCH}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Motivate the need for low momentum PID at LHCb}
+    \item[\textasteriskcentered]{Explain how TORCH combines timing and Cherenkov information}
+    \item[\textasteriskcentered]{Show the design of TORCH}
+    \item[\textasteriskcentered]{Briefly introduce previous studies of timing performance}
+  \end{itemize}
+\subsection{PID likelihood calculation}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Describe analytical likelihood calculation}
+  \end{itemize}
+\subsection{November 2022 testbeam}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2em}
+    \item[\textendash]{Briefly mention the motivation and goals of this testbeam campaign}
+  \end{itemize}
+\subsubsection{Testbeam setup}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Proto-TORCH}
+    \item[\textasteriskcentered]{The Proton Synchrotron T9 beam line}
+    \item[\textasteriskcentered]{Cherenkov counters}
+    \item[\textasteriskcentered]{Large scintillators}
+    \item[\textasteriskcentered]{Timing stations}
+    \item[\textasteriskcentered]{Beam telescope}
+    \item[\textasteriskcentered]{Trigger Logic Unit}
+  \end{itemize}
+\subsubsection{PID study of testbeam}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{2.5em}
+    \item[\textasteriskcentered]{Calibration of timing information}
+    \item[\textasteriskcentered]{Cable length measurement}
+    \item[\textasteriskcentered]{PID separation power at different momenta}
+    \item[\textasteriskcentered]{PID separation power in different beam positions}
+    \item[\textasteriskcentered]{Comparison of PID seperation power with and witout knowledge of $t_0$}
+    \item[\textasteriskcentered]{Overall improvement in PID performance at LHCb}
+  \end{itemize}
+
+\section{Summary and conclusion}
+  \begin{itemize}[nosep]
+    \setlength{\itemindent}{0em}
+    \item{Summarise LHCb, BESIII and TORCH analyses}
+    \item{Outlook on future improvements and measurements}
+  \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
