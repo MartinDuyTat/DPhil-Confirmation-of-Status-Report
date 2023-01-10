@@ -128,15 +128,84 @@ Binned strong-phase measurements have previously been done in other decay modes~
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formalism}
+\subsection{Strong-phase inputs from quantum-correlated \texorpdfstring{$D^0\bar{D^0}$}{DD} decays}
+\noindent At BESIII, charm mesons are produced in $e^+e^-$ collisions at the $\psi(3770)$ resonance. The strong decay of $\psi(3770)\to D\bar{D}$ conserves the $C = -1$ quantum number of the initial state, leaving the $D$-meson pair in an anti-symmetric wave function. This quantum correlation allows for a direct access to the strong-phase difference between $D^0$ and $\bar{D^0}$ decays through a double-tag (DT) analysis. The method uses single-tag (ST) events, which are events where only one of the charm mesons is reconstructed, with no requirements on the decay of the other meson, and DT events, where both $D$ mesons are reconstructed, one in a tag mode and the other in the signal mode $D^0\to K^+K^-\pi^+\pi^-$.
+
+In DT events, the phase space of the $D\to K^+K^-\pi^+\pi^-$ decay is split into $2\times\mathcal{N}$ bins, labelled from $i = -\mathcal{N}$ to $i = \mathcal{N}$, excluding zero. Bin $-i$ is related to bin $+i$ by a $C\!P$ transformation. The choice of binning scheme is described in Sec.~\ref{section:Binning_scheme}. When the signal mode is tagged using different tag types, one may infer the strong-phase information by studying the bin yields. These will evolve in a non-trivial manner across different bins due to different strong-phase differences.
+
+Table~\ref{table:Tag_modes} lists all the tag modes used for this analysis. The analysis can be split into four categories: Flavour tags, $C\!P$ tags, $K_S^0\pi^+\pi^-$, and $K_L^0\pi^+\pi^-$. Flavour tags are used to determine the flavour of the charm meson in the signal mode. The $C\!P$ tags are modes in which the $D$ meson decays to a $C\!P$ eigenstate. The modes $D\to K_{S, L}^0\pi^+\pi^-$ are of mixed $C\!P$ content, since these decays can proceed through both $C\!P$-even and $C\!P$-odd amplitudes. The mode $\pi^+\pi^-\pi^0$ is listed as a $C\!P$-even tag since its $C\!P$-even fraction, $F_+^{\pi\pi\pi^0} = 0.973 \pm 0.017$~\cite{cite:pipipi0_CPfraction}, is very close to unity.
+
+\begin{table}[htb]
+    \centering
+    \caption{Tag modes used in this analysis.}
+    \label{table:Tag_modes}
+    \begin{tabular}{cc}
+        \hline
+        Category     & Tag modes \\
+        \hline
+        Flavour      & $K^-\pi^+$, $K^-\pi^+\pi^0$, $K^-\pi^+\pi^-\pi^+$, $K^-e^+\nu_e$ \\
+        $C\!P$ even  & $K^+K^-$, $\pi^+\pi^-$, $K_S^0\pi^0\pi^0$, $\pi^+\pi^-\pi^0$, $K_L^0\pi^0$ \\
+        $C\!P$ odd   & $K_S^0\pi^0$, $K_S^0\eta_{\gamma\gamma}$, $K_S^0\eta^\prime(\pi\pi\eta)$, $K_S^0\eta^\prime(\rho^0\gamma)$, $K_S^0\omega$ \\
+        Mixed $C\!P$ & $K_S^0\pi^+\pi^-$, $K_L^0\pi^+\pi^-$ \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Events where one $D$ meson is reconstructed as the signal decay $D\to K^+K^-\pi^+\pi^-$, while the other is reconstructed as a flavour tag mode $f$, have no sensitivity to strong phases due to the abscence of quantum correlations. However, such events are useful to determine the fractional bin yield $K_i$ of signal decays into bin $i$. This is given by the ratio of the DT yield $N^{\rm DT}$ and ST yield $N^{\rm ST}$,
+
+\begin{equation}
+    \frac{N^{\rm DT}(KK\pi\pi | f)}{N^{\rm ST}(f)}\times\frac{\epsilon_{\rm ST}(f)}{\epsilon_{\rm DT}(KK\pi\pi | f)} = \mathcal{B}(KK\pi\pi)K_i,
+    \label{equation:Flavour_tag_Ki}
+\end{equation}
+where $\mathcal{B}(KK\pi\pi)$ is the branching fraction of $D^0\to K^+K^-\pi^+\pi^-$ and $\epsilon_{\rm DT(ST)}$ is the reconstruction efficiency of the DT (ST) event.
+
+Instead, if $f$ is reconstructed as a pure or mixed-$C\!P$ tag mode, the predicted ratio of DT to ST yield is
+\begin{equation}
+    \frac{N_i^{\rm DT}(KK\pi\pi | f)}{N^{\rm ST}(f)}\times\frac{\epsilon_{\rm ST}(f)}{\epsilon_{\rm DT}(KK\pi\pi | f)} = \mathcal{B}(KK\pi\pi)\big(K_i + K_{-i} - 2\sqrt{K_iK_{-i}}(2F_+^{f} - 1)c_i\big),
+    \label{equation:DT_ST_yield_ratio}
+\end{equation}
+where $F_+^f$ is the $C\!P$-even fraction of the tag mode. For pure $C\!P$-even (odd) tags, $F_+^f = 1$ ($0$). $c_i$ is the amplitude-averaged strong-phase difference $\Delta\delta_D = \delta_D(\Phi) - \delta_D(\bar{\Phi})$ of the $D$ decay in bin $i$, given by
+
+\begin{equation}
+    c_i\equiv\frac{\int_i\diff\Phi\lvert\mathcal{A}_{D^0}\rvert\lvert\mathcal{A}_{\bar{D^0}}\rvert\cos(\Delta\delta_D)}{\sqrt{\int_i\diff\Phi\lvert\mathcal{A}_{D^0}\rvert^2\int_i\diff\Phi\lvert\mathcal{A}_{\bar{D^0}}\rvert^2}}.
+    \label{equation:ci}
+\end{equation}
+In Eq.~\eqref{equation:ci}, $\mathcal{A}_{D^0}$ is the amplitude of the decay $D^0\to K^+K^-\pi^+\pi^-$ and $\Phi$ labels the position in the five-dimensional phase space. The integral over $\Phi_i$ is performed over the phase-space region that belongs to bin $i$. The $C\!P$-conjugated amplitude $\mathcal{A}_{\bar{D^0}}(\Phi)$ is equal to $\mathcal{A}_{D^0}(\bar{\Phi})$, where $\bar{\Phi}$ is obtained by swapping the charges and momentum directions of the $D$-decay products. Here and in subsequent discussion $C\!P$ violation in the $D$-meson system is neglected, which is a good assumption at the current level of experimental sensitivity~\cite{HFLAV18}. The expression for $s_i$, the sine of the $D$ strong-phase difference, is analogous.
+
+For the $K_S^0\pi^+\pi^-$ tag, which is a decay mode of mixed $C\!P$, an enhanced sensitivity to the strong-phase differences is obtained by separating events into bins of phase space of the tag decay. Additionally, binning the tag mode provides sensitivity to $s_i$. The amplitude-averaged strong-phase difference between $D^0$ and $\bar{D^0}$ decays has been measured in these bins by both CLEO~\cite{cite:CLEOcisiKSpipi} and BESIII~\cite{cite:KSpipiStrongPhase}. The fractional yield $K_i$ of $D^0$ decays and amplitude-averaged cosine and sine of the strong-phase difference $c_i^f$ and $s_i^f$ have been measured in each bin. The combined CLEO and BESIII results from Ref.~\cite{cite:KSpipiStrongPhase} are used, and they are treated as external inputs. The yield-ratio expression in bin $i$ on the signal side and bin $j$ on the tag side is
+
+\begin{linenomath}
+    \begin{align}
+        \frac{N_{ij}^{\rm DT}(KK\pi\pi | f)}{N^{\rm ST}(f)}&\times\frac{\epsilon_{\rm ST}(f)}{\epsilon_{\rm DT}(KK\pi\pi | f)} = \nonumber \\
+        \frac{1}{2}\mathcal{B}(KK\pi\pi)&\big(K_iK_{-j}^f + K_{-i}K_j^f - 2\sqrt{K_iK_{-i}K_j^fK_{-j}^f}c_ic_j^f + s_is_j^f\big).
+        \label{equation:DT_ST_yield_ratio_K0pipi}
+    \end{align}
+\end{linenomath}
+The expression for the $D\to K_L^0\pi^+\pi^-$ tag is analogous, but with a sign swap in $c_i^f$ and $s_i^f$, and their values are also reported in Refs.~\cite{cite:CLEOcisiKSpipi,cite:KSpipiStrongPhase}.
+
+If the available statistics is insufficient to determine $c_i$ (and $s_i$), it is possible to consider the phase-space of $D^0\to K^+K^-\pi^+\pi^-$ inclusively. This has the disadvantage of diluting the strong-phase differences. Eq.~\eqref{equation:DT_ST_yield_ratio} then simplifies to
+
+\begin{equation}
+    \frac{N^{\rm DT}(KK\pi\pi | f)}{N^{\rm ST}(f)}\times\frac{\epsilon_{\rm ST}(f)}{\epsilon_{\rm DT}(KK\pi\pi | f)} = \mathcal{B}(KK\pi\pi)\big(1 - (2F_+^{f} - 1)(2F_+ - 1)\big),
+    \label{equation:DT_ST_yield_ratio_FPlus}
+\end{equation}
+while Eq.~\eqref{equation:DT_ST_yield_ratio_K0pipi} becomes
+\begin{equation}
+    \frac{N_i^{\rm DT}(KK\pi\pi | f)}{N^{\rm ST}(f)}\times\frac{\epsilon_{\rm ST}(f)}{\epsilon_{\rm DT}(KK\pi\pi | f)} = \mathcal{B}(KK\pi\pi)\big(K_i + K_{-i} - 2\sqrt{K_iK_{-i}}c_i(2F_+ - 1)\big).
+    \label{equation:DT_ST_yield_ratio_K0pipi_FPlus}
+\end{equation}
+For a phase-space inclusive analysis, the strong-phase information is encoded in the $C\!P$-even fraction $F_+$ of the $D^0\to K^+K^-\pi^+\pi^-$ decay. The quantity $2F_+ - 1$ can be identified as the cosine of the amplitude-averaged strong-phase of the whole phase space.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{\texorpdfstring{$\gamma$}{gamma} sensitity through \texorpdfstring{$B^\pm$}{B} decays}
-This analysis follows the formalism described in Ref.~\cite{LHCb-PAPER-2020-019}. The $B^-\to[K^+K^-\pi^+\pi^-]_D K^-$ decay can proceed via the favoured $B^-\to D^0K^-$ amplitude, or via the suppressed $B^-\to\bar{D^0}K^-$ amplitude. The overall amplitude of this decay is a coherent sum of the two decay paths,
+\noindent The analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_Dh^\pm$ to determine $\gamma$ follows the formalism described in Ref.~\cite{LHCb-PAPER-2020-019}. The $B^-\to DK^-$ decay can proceed via the favoured $B^-\to D^0K^-$ amplitude, or via the suppressed $B^-\to\bar{D^0}K^-$ amplitude. The overall amplitude of this decay is a coherent sum of the two decay paths,
 \begin{equation}
     \mathcal{A}_B^-(\Phi) = \mathcal{A}_{B^-}^{D^0K^-}\Big(\mathcal{A}_{D^0}(\Phi) + r_B^{DK}\exp\big(i(\delta_B^{DK} - \gamma)\big)\mathcal{A}_{\bar{D^0}}(\Phi)\Big),
     \label{equation:Bpm_amplitude}
 \end{equation}
-where $\mathcal{A}_{B^-}^{D^0K^-}$ is the amplitude of the favoured $B^-\to D^0 K^-$ decay, $\mathcal{A}_{D^0}$ ($\mathcal{A}_{\bar{D^0}}$) is the amplitude of the $D^0$ ($\bar{D^0}$) decay, $r_B^{DK}$ is the magnitude of the ratio of the $B$-decay amplitudes, $\delta_B^{DK}$ is the strong-phase difference of the amplitudes and $\gamma$ is the weak-phase. Here $\Phi$ labels the position in the five-dimensional phase space of the decay $D^0\to K^+K^-\pi^+\pi^-$. The corresponding expression for the $B^+$ decay is obtained by making the substitutions $\gamma\to -\gamma$ and $\mathcal{A}_{D^0}\to\mathcal{A}_{\bar{D^0}}$. The $C\!P$-conjugated amplitude $\mathcal{A}_{\bar{D^0}}(\Phi)$ is equal to $\mathcal{A}_{D^0}(\bar{\Phi})$, where $\bar{\Phi}$ is obtained by swapping the charges and momentum directions of the $D$-decay products. Here and in subsequent discussion $C\!P$ violation in the $D$-meson system is neglected, which is a good assumption at the current level of experimental sensitivity~\cite{HFLAV18}.
+where $\mathcal{A}_{B^-}^{D^0K^-}$ is the amplitude of the favoured $B^-\to D^0 K^-$ decay, $\mathcal{A}_{D^0}$ ($\mathcal{A}_{\bar{D^0}}$) is the amplitude of the $D^0$ ($\bar{D^0}$) decay, $r_B^{DK}$ is the magnitude of the ratio of the $B$-decay amplitudes, $\delta_B^{DK}$ is the strong-phase difference of the amplitudes and $\gamma$ is the weak-phase. The corresponding expression for the $B^+$ decay is obtained by making the substitutions $\gamma\to -\gamma$ and $\mathcal{A}_{D^0}\to\mathcal{A}_{\bar{D^0}}$.
 
-The $D$-decay phase space is split into $2\times\mathcal{N}$ bins, labelled from $i = -\mathcal{N}$ to $i = \mathcal{N}$, excluding zero. Bin $-i$ is related to bin $+i$ by a $C\!P$ transformation. The choice of binning scheme is described in Sec.~\ref{section:Binning_scheme}. The expected yield of $B^-$ decays in bin $i$ is obtained by integrating Eq.~\eqref{equation:Bpm_amplitude}, and the corresponding expression for $B^+$ decays, over the phase space $\Phi_i$ that belongs to that particular bin. Defining the $C\!P$-violating observables
+The expected yield of $B^-$ decays in bin $i$ is obtained by integrating Eq.~\eqref{equation:Bpm_amplitude}, and the corresponding expression for $B^+$ decays. Defining the $C\!P$-violating observables
 
 \begin{equation}
     x_\pm^{DK} = r_B^{DK}\cos(\delta_B^{DK}\pm\gamma), \quad y_\pm^{DK} = r_B^{DK}\sin(\delta_B^{DK}\pm\gamma),
@@ -154,12 +223,7 @@ Equations~\eqref{equation:Ni_plus} and \eqref{equation:Ni_minus} are sensitive t
     F_i\equiv\frac{\int_i\diff\Phi\eta(\Phi)\lvert\mathcal{A}_{D^0}\rvert^2}{\int\diff\Phi\eta(\Phi)\lvert\mathcal{A}_{D^0}\rvert^2},
     \label{equation:Fi}
 \end{equation}
-which are interpreted as the fractional yield of $D^0$ decays in bin $i$ measured by experiment. The function $\eta(\Phi)$ accounts for the experimental acceptance, which in general depends on the location of the decay in phase space. The strong-phase information is encoded in the parameters $c_i$ and $s_i$, where 
-\begin{equation}
-    c_i\equiv\frac{\int_i\diff\Phi\lvert\mathcal{A}_{D^0}\rvert\lvert\mathcal{A}_{\bar{D^0}}\rvert\cos(\Delta\delta_D)}{\sqrt{\int_i\diff\Phi\lvert\mathcal{A}_{D^0}\rvert^2\int_i\diff\Phi\lvert\mathcal{A}_{\bar{D^0}}\rvert^2}},
-    \label{equation:ci}
-\end{equation}
-which is the amplitude-averaged cosine of the strong-phase difference $\Delta\delta_D = \delta_D(\Phi) - \delta_D(\bar{\Phi})$ of the $D$ decay. The expression for the amplitude-averaged sine of the strong-phase difference $s_i$ is analogous. It follows that $\bar{F}_i = F_{-i}$, $c_{-i} = c_i$ and $s_{-i} = -s_i$, where $\bar{F}_i$ are the corresponding $\bar{D^0}$ fractional bin yields.  The values of $c_i$ and $s_i$ are currently taken from an amplitude model~\cite{LHCb-PAPER-2018-041}. In the future it is expected that direct measurements of $c_i$ and $s_i$ will become available from a sample of correlated $D\bar{D}$ decays collected by the BESIII experiment at charm threshold~\cite{cite:BESIIIWhitePaper}. The anticipated size of this data sample at charm threshold leads to the choice of $\mathcal{N} = 8$ for the number of bins.
+which are analogous to $K_i$, but contains the function $\eta(\Phi)$ to account for the experimental acceptance, which in general depends on the location of the decay in phase space.
 
 Analogous expressions to Eqs.~\ref{equation:CP_observables},~\ref{equation:Ni_plus} and~\ref{equation:Ni_minus} can be written for the decay mode $B^\pm\to D\pi^+$, with the $DK$ superscripts replaced by $D\pi$. Since the decay topology is identical to that of $B^\pm\to DK^+$, the phase-space acceptance $\eta(\Phi)$ is expected to be very similar between the two $B^\pm$-decay modes, and studies using simulation samples show that any differences are negligible within the current precision. Thus, the $F_i$ parameters can be considered as common between $B^\pm\to D\pi^+$ and $B^\pm\to DK^+$ decays. The mode $B^\pm\to D\pi^+$ has a branching fraction that is an order of magnitude larger than that of the $B^\pm\to DK^+$ mode, but the interference effects, governed by the parameter $r_B^{D\pi}\approx 0.005$~\cite{LHCb-PAPER-2021-033}, are much smaller. Therefore, this decay has a significantly lower sensitivity to $\gamma$, but is a suitable mode for determining the $F_i$ parameters. By including the $B^\pm\to D\pi^+$ channel as a signal mode, the $F_i$ can be treated as free parameters in the analysis, thus form of the acceptance function $\eta(\Phi)$ is not needed.
 
@@ -184,80 +248,8 @@ Studies performed with pseudoexperiments demonstrate that a fit where all eight 
 
 In summary, a measurement of the bin yields of $B^\pm\to[K^+K^-\pi^+\pi^-]_D h^\pm$ decays in bins of phase space allows the six $C\!P$-violating observables $x_\pm^{DK}$, $y_\pm^{DK}$, $x_\xi^{D\pi}$ and $y_\xi^{D\pi}$ to be determined, along with the experiment-specific parameters $F_i$, expressed in terms of $R_i$, and the four normalisation parameters $h_{B^\pm}^{D h}$.
 
-Additionally, $\gamma$ can be further constrained by measuring phase-space inclusive $C\!P$-violating observables~\cite{Nayak:2014tea,Malde:2015mha}. In the case of $D \to K^+K^-\pi^+\pi^-$ decays these are the charge asymmetries
-\begin{equation}
-    A^{KK\pi\pi}_h \equiv \frac{\Gamma(B^-\to D h^-) - \Gamma(B^+\to D h^+)}{\Gamma(B^-\to D h^-) + \Gamma(B^+\to D h^+)},
-    \label{equation:Asymmetry}
-\end{equation}
-for $h = \pi$ or $K$, and the double ratio
-\begin{equation}
-    R^{KK\pi\pi}_{C\!P} \equiv \frac{R_{KK\pi\pi}}{R_{K\pi\pi\pi}}, \quad R_f \equiv \frac{\Gamma(B^-\to[f]_DK^-) + \Gamma(B^+\to[f]_DK^+)}{\Gamma(B^-\to[f]_D\pi^-) + \Gamma(B^+\to[f]_D\pi^+)},
-    \label{equation:R_CP}
-\end{equation}
-where in the case of $R_{K\pi\pi\pi}$ the kaon from the $D$-meson decay has the same charge as the pion or kaon from the $B$-meson decay. The value of $R_{K\pi\pi\pi}$ can be determined from the results presented in Ref.~\cite{LHCb-PAPER-2022-017}. By integrating Eqs.~\eqref{equation:Ni_plus} and \eqref{equation:Ni_minus} over all bins $i$, it can be shown that these phase-space inclusive $C\!P$-violating observables may be expressed in terms of the underlying physics parameters,
-\begin{align}
-    A^{KK\pi\pi}_h &= \frac{2r_B^{D h}\kappa\sin(\delta_B^{D h})\sin(\gamma)}{1 + (r_B^{D h})^2 + 2r_B^{D h}\kappa\cos(\delta_B^{D h})\cos(\gamma)}, \label{equation:Asymmetry_gamma} \\[0.5em]
-    R^{KK\pi\pi}_{C\!P} &= 1 + (r_B^{DK})^2 + 2r_B^{DK}\kappa\cos(\delta_B^{DK})\cos(\gamma), \label{equation:R_CP_gamma}
-\end{align}
-where $\kappa = 2F^{KK\pi\pi}_+ - 1$ is the dilution factor when integrating over all of phase space, with $F^{KK\pi\pi}_+$ being the $C\!P$-even fraction of the decay.  In Eqs.~\eqref{equation:Asymmetry_gamma} and \eqref{equation:R_CP_gamma}, the small effects of charm mixing have been neglected, but these may readily be included~\cite{Rama:2013voa}. Analogous observables $A^{\pi\pi\pi\pi}_h$ and $R^{\pi\pi\pi\pi}_{C\!P}$ exist for the decay $D \to \pi^+\pi^-\pi^+\pi^-$.
-
-\subsection{Strong-phase inputs from quantum-correlated \texorpdfstring{$D^0\bar{D^0}$}{DD} decays}
-\noindent The strong decay of $\psi(3770)\to D\bar{D}$ conserves the $C = -1$ quantum number of the initial state, leaving the $D$-meson pair in an anti-symmetric wave function. This quantum correlation allows for a direct access to the strong-phase difference between $D^0$ and $\bar{D^0}$ decays through a double-tag (DT) analysis. The method uses single-tag (ST) events, which are events where one of the charm mesons is reconstructed in a $C\!P$ eigenstate, with no requirements on the decay of the other meson, and DT events, where both $D$ mesons are reconstructed, one in a tag mode and the other in the signal mode.
-
-Table~\ref{table:Tag_modes} lists all the tag modes used for this analysis. The analysis can be split into three categories: $C\!P$ tags, $K_S^0\pi^+\pi^-$, and $K_L^0\pi^+\pi^-$. The $C\!P$ tags are modes in which the $D$ meson decays to a $C\!P$ eigenstate. The modes $D\to K_{S, L}^0\pi^+\pi^-$ are of mixed $C\!P$ content, since these decays can proceed through both $C\!P$-even and $C\!P$-odd amplitudes. The mode $\pi^+\pi^-\pi^0$ is listed as a $C\!P$-even tag since its $C\!P$-even fraction, $F_+^{\pi\pi\pi^0} = 0.973 \pm 0.017$~\cite{cite:pipipi0_CPfraction}, is very close to unity. The modes $D\to K_L^0\pi^0\pi^0$, $D\to K_L^0\omega$, and the self-tag $D\to K^+K^-\pi^+\pi^-$ have not been included because their yields are low and the inclusion of these tag modes would not significantly improve the precision of the measurement.
-
-\begin{table}[htb]
-    \centering
-    \caption{Tag modes used in this analysis.}
-    \label{table:Tag_modes}
-    \begin{tabular}{cc}
-        \hline
-        Category     & Tag modes \\
-        \hline
-        $C\!P$ even  & $K^+K^-$, $\pi^+\pi^-$, $K_S^0\pi^0\pi^0$, $\pi^+\pi^-\pi^0$, $K_L^0\pi^0$ \\
-        $C\!P$ odd   & $K_S^0\pi^0$, $K_S^0\eta_{\gamma\gamma}$, $K_S^0\eta^\prime(\pi\pi\eta)$, $K_S^0\eta^\prime(\rho^0\gamma)$, $K_S^0\omega$ \\
-        Mixed $C\!P$ & $K_S^0\pi^+\pi^-$, $K_L^0\pi^+\pi^-$ \\
-        \hline
-    \end{tabular}
-\end{table}
-
-The predicted ST yield of a tag mode $D\to f$ with $C\!P$-even fraction $F_+^f$ is given by
-\begin{equation}
-    N^{\rm ST}(f) = 2N_{D\bar{D}}\mathcal{B}(f)\epsilon_{\rm ST}(f)\big(1 - (2F_+^{f} - 1)y\big),
-    \label{equation:ST_yield}
-\end{equation}
-where $N_{D\bar{D}} = (10597 \pm 28 \pm 98) \times 10^3$~\cite{cite:NDD} is the total number of $D\bar{D}$ pairs, $\mathcal{B}$ is the branching fraction, $\epsilon_{\rm ST}$ is the reconstruction efficiency of the ST mode, and $y = (0.615^{+0.056}_{-0.055})\times 10^{-2}$ is the charm-mixing parameter~\cite{cite:HFLAV2018}. In Eq.~\eqref{equation:ST_yield} and subsequent expressions, $\mathcal{O}(y^2)$ terms are neglected. For pure $C\!P$-even (odd) tags, $F_+^f = 1$ ($0$).
-
-Events where one $D$ meson is reconstructed as the signal decay $D\to K^+K^-\pi^+\pi^-$, while the other is reconstructed as a pure or mixed-$C\!P$ tag mode $f$, have a predicted DT yield
-\begin{linenomath}
-    \begin{align}
-        N^{\rm DT}(KK\pi\pi | f) =& 2N_{D\bar{D}}\mathcal{B}(f)\mathcal{B}(KK\pi\pi)\epsilon_{\rm DT}(KK\pi\pi | f) \nonumber \\
-        \times&\big(1 - (2F_+^{f} - 1)(2F_+ - 1)\big),
-        \label{equation:DT_yield}
-    \end{align}
-\end{linenomath}
-where $\mathcal{B}(KK\pi\pi)$ is the branching fraction of $D^0\to K^+K^-\pi^+\pi^-$, $\epsilon_{\rm DT}$ is the reconstruction efficiency of the DT event, and $F_+$ denotes the $C\!P$-even fraction of $D^0\to K^+K^-\pi^+\pi^-$. Equations~\eqref{equation:ST_yield} and~\eqref{equation:DT_yield} can be combined into
-\begin{linenomath}
-    \begin{align}
-        \frac{N^{\rm DT}(KK\pi\pi | f)}{N^{\rm ST}(f)/\big(1 - (2F_+^{f} - 1)y\big)}\times\frac{\epsilon_{\rm ST}(f)}{\epsilon_{\rm DT}(KK\pi\pi | f)} =& \nonumber \\
-        \mathcal{B}(KK\pi\pi)\big(1 - (2F_+^{f} - 1)(2F_+ - 1)\big).
-        \label{equation:DT_ST_yield_ratio}
-    \end{align}
-\end{linenomath}
-Equation~\eqref{equation:DT_ST_yield_ratio} indicates that the ratio of the DT to ST yields, after efficiency corrections, is sensitive to $\mathcal{B}(KK\pi\pi)$ and the $C\!P$-even fraction $F_+$. Measuring this quantity for tags of different $C\!P$ eigenvalues allows $F_+$ to be determined.
-
-For the $K_S^0\pi^+\pi^-$ tag, which is a decay mode of  mixed $C\!P$, an enhanced sensitivity to $F_+$ is obtained by separating events into bins of phase space of the tag decay. The amplitude-averaged strong-phase difference between $D^0$ and $\bar{D^0}$ decays has been measured in these bins by both CLEO~\cite{cite:CLEOcisiKSpipi} and BESIII~\cite{cite:KSpipiStrongPhase}. The binning scheme used for this analysis is the ``equal $\Delta\delta_D$ binning'', where bin boundaries are chosen such that each bin spans an equal range in the strong-phase difference. The fractional yield $K_i$ of $D^0$ decays and amplitude-averaged cosine of the strong-phase difference $c_i$ have been measured in each bin. There are eight pairs of bins in total~\cite{cite:CLEOcisiKSpipi}, and since each pair of bins have the same value for $c_i$, the data in each pair are merged. The combined CLEO and BESIII results from Ref.~\cite{cite:KSpipiStrongPhase} are used, and they are treated as external inputs to the $F_+$ determination. The yield-ratio expression in bin $i$ is
-\begin{linenomath}
-    \begin{align}
-        \frac{N_i^{\rm DT}(KK\pi\pi | f)}{N^{\rm ST}(f)/\big(1 - (2F_+^{f} - 1)y\big)}\times\frac{\epsilon_{\rm ST}(f)}{\epsilon_{\rm DT}(KK\pi\pi | f)} = \nonumber \\
-        \mathcal{B}(KK\pi\pi)\big(K_i + K_{-i} - 2\sqrt{K_iK_{-i}}c_i(2F_+ - 1)\big).
-        \label{equation:DT_ST_yield_ratio_binned}
-    \end{align}
-\end{linenomath}
-The expression for the $D\to K_L^0\pi^+\pi^-$ tag is obtained by replacing $K_i$ with $K_i^\prime$ and $c_i$ with $-c_i^\prime$, the values of which are also reported in Refs.~\cite{cite:CLEOcisiKSpipi,cite:KSpipiStrongPhase}.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Binning scheme}
+\subsection{Binning scheme}
 \label{section_binning_scheme}
 In the $B^\pm\to DK^\pm$, $D\to K^0_S h^+h^-$ ($h=\pi, K$) analysis presented in Ref.~\cite{LHCb-PAPER-2020-019}, an optimal binning scheme, that can be visualised in a two-dimensional Dalitz plot, is used to maximise the sensitivity to $\gamma$. The binning scheme for the $D^0\to K^+K^-\pi^+\pi^-$ decay is defined analogously, but cannot be easily visualised, as the phase space of four-body decays is five-dimensional.
 
@@ -284,26 +276,24 @@ Only even values of $\mathcal{N}$ are considered and the bin boundaries at $\Del
 
 Figure~\ref{figure:Binning_scheme_plot_8bins} shows the binning scheme resulting from this procedure for $2 \times 8$ bins, and the values of $c_i$ and $s_i$ predicted by the amplitude model are shown in Table~\ref{table:ci_si_Fi_2x8}, along with the predicted values of $F_i$ and the fractional bin volume $V_i$. In the calculation, the region of phase space where the invariant mass of the $\pi^+\pi^-$ lies close to the $K^0_S$ mass is excluded. This requirement, which removes around $5\%$ of signal decays, is imposed to match a selection requirement to remove background that is described in Sec.~\ref{section:Candidate_selection}.
 
-The binning scheme shown in Fig.~\ref{figure:Binning_scheme_plot_8bins} has $Q = 0.90$, which indicates that only $10\%$ of the statistical sensitivity is lost through the binning of phase space. The procedure for assigning bin numbers for this scheme according to the four-momenta of the $D$ decay is provided in Ref.~\cite{cite:KKpipiBinningScheme}. An alternative optimised binning scheme with $\mathcal{N}=4$ is presented in Appendix~\ref{section:Yields_in_bins_of_phase_space}.
+The binning scheme shown in Fig.~\ref{figure:Binning_scheme_plot_8bins} has $Q = 0.90$, which indicates that only $10\%$ of the statistical sensitivity is lost through the binning of phase space.
 
 \begin{figure}[tb]
     \centering
     \begin{subfigure}{0.57\textwidth}
-        \includegraphics[height=6.2cm]{example-image-a}  
+        \includegraphics[height=6.2cm]{Plots/BinningSchemePlot_8Bins.png}
         \caption{}
         \label{figure:Binning_scheme_plot_8bins}
     \end{subfigure}%
     \hfill
     \begin{subfigure}{0.43\textwidth}
-        \includegraphics[height=6.2cm]{example-image-a}  
+        \includegraphics[height=6.2cm]{Plots/StrongPhaseParametersPlot_cisi_8Bins.png}
         \caption{}
         \label{figure:ci_si_2x8}
     \end{subfigure}
     \caption{The optimised $2\times 8$ binning scheme in $\Delta \delta_D$-$\ln(r_D)$ space (left) and the associated $c_i$ and $s_i$ parameters calculated using the amplitude  model (right). The numbers indicate the bin numbers.}
     \label{figure:Binning_scheme_plots_8bins}
 \end{figure}
-
-The determination of the $C\!P$-violating parameters requires as input the values of $c_i$ and $s_i$ in each bin. Although the bins have been defined using the amplitude model, it will be possible to use direct measurements of these parameters made at charm threshold, when they become available. The choice of binning scheme does not bias the determination of the $C\!P$-violating parameters, even if the direct measurements were to indicate that the amplitude model gives an imperfect description of the strong-phase variation.  In this case, there would be a reduction in statistical sensitivity compared to current expectations, but the result obtained for $\gamma$ would have no model-dependent uncertainty.  
 
 \begin{table}[tb]
     \centering
@@ -324,6 +314,65 @@ The determination of the $C\!P$-violating parameters requires as input the value
         \bottomrule
     \end{tabular}
 \end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Double-tag analysis of $D^0\to K^+K^-\pi^+\pi^-$ at BESIII}
+\subsection{The BESIII detector}
+\noindent BESIII \cite{cite_BESIII} is a general purpose solenoidal detector. The parts most relevant to this analysis are the Helium Multilayer Drift Chamber (MDC) for measuring the momenta and $\dd{E}/\dd{x}$ of charged particles, a Time Of Flight (TOF) system for particle ID and an ElectroMagnetic Calorimeter (EMC) to measure shower energies. The dataset currently under consideration, collected in 2010-2011, has $\SI{2.9}{\per\femto\barn}$ of $e^+e^-\to\psi(3770)$ events, but this will grow to $\SI{20}{\per\femto\barn}$ by the end of 2024~\cite{cite:BESIIIWhitePaper}. Part of this larger dataset has already been collected during 2022 and will be ready for analysis in the near future.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Single- and double-tag reconstruction}
+\noindent In the BESIII detector, neutral $D$-meson decays are reconstructed from charged tracks or neutral showers. Charged tracks detected in the MDC are required to be within a polar angle ($\theta$) range of $|\!\cos\theta|<0.93$, where $\theta$ is defined with respect to the $z$-axis, which is the symmetry axis of the MDC. For charged tracks not originating from $K_S^0$ decays, the distance of closest approach to the interaction point (IP), $|V_{z}|$, must be less than 10\,cm along the $z$-axis, and less than 1\,cm in the transverse plane.
+
+Photon candidates are identified using showers in the EMC. The deposited energy of each shower must be more than 25~MeV in the barrel region ($|\cos \theta|< 0.80$) and more than 50~MeV in the end-cap region ($0.86 <|\!\cos \theta|< 0.92$). To exclude showers that originate from charged tracks, the angle subtended by the EMC shower and the position of the closest charged track at the EMC must be greater than 10 degrees as measured from the IP. To suppress electronic noise and showers unrelated to the event, the difference between the EMC time and the event-start time is required to be within [0, 700]\,ns.
+
+Particle identification~(PID) for charged tracks combines measurements of the d$E$/d$x$ in the MDC, and the time of flight as measured by the TOF system, to form likelihoods $\mathcal{L}(h)$ for each hadron hypothesis $h$ $(h=K,\pi)$. Charged kaons and pions are identified by comparing the likelihoods for the kaon and pion hypotheses, $\mathcal{L}(K)>\mathcal{L}(\pi)$ and $\mathcal{L}(\pi)>\mathcal{L}(K)$, respectively.
+
+Each $K_{S}^0$ candidate is reconstructed from two oppositely charged tracks satisfying $|V_{z}|<$ 20~cm. The two charged tracks are assigned the pion hypothesis without imposing PID criteria. They are constrained to originate from a common vertex and are required to have an invariant mass within 12~MeV$/c^{2}$ of the known $K^0_{S}$ mass~\cite{pdg}. The decay length of the $K^0_S$ candidate is required to be greater than twice the vertex resolution away from the IP.
+
+Candidate $\pi^0$ and $\eta$ mesons are reconstructed through the decays $\pi^0\to\gamma\gamma$ and $\eta\to\gamma\gamma$, with their di-photon invariant masses required to be within $[115, 150]$ and $[480, 580]$~MeV$/c^2$, respectively. The $\eta^\prime$ meson is reconstructed through  $\eta^\prime\to\pi^+\pi^-\eta$ and $\rho^0(\pi^+\pi^-)\gamma$, with the invariant masses of the decay products within $[940, 976]$ and $[940, 970]$~MeV$/c^2$. The invariant mass of the pion pair in the $\rho^0$ decay must lie within $[626, 924]$~MeV$/c^2$.
+
+In the reconstruction of $D\to\pi^+\pi^-\pi^0$ and $D\to K^+K^-\pi^+\pi^-$ decays, the $\pi^+\pi^-$ pair is required to originate from a vertex within twice the vertex resolution from the IP, in order to reduce backgrounds from $D\to K_S^0\pi^0$ and $D\to K_S^0K^+K^-$, respectively. For $\pi^+\pi^-\pi^0$, the $\pi^+\pi^-$ invariant mass is required to be more than $18$~MeV$/c^2$ away from the known $K_S^0$ mass. For $K^+K^-\pi^+\pi^-$, the $\pi^+\pi^-$ mass must fall outside $[477, 507]$~MeV$/c^2$.
+
+For fully reconstructed tags, $\Delta E = E_D - \sqrt{s}/2$, where $E_D$ is the reconstructed energy of the $D$ meson, is required to be within $3\sigma$ of the signal peak. This requirement removes combinatorial background. In the tags containing a $K_L^0$, a partial reconstruction is performed where the signal $D\to K^+K^-\pi^+\pi^-$ is first reconstructed. From the remaining tracks and showers, the tag mode is reconstructed without the $K_L^0$ meson. It is required that there are no additional charged tracks or $\pi^0$ candidates. The $K_L^0$ momentum is then inferred from the missing momentum of the event. Since there is a missing particle, the ST yield cannot be measured in tag modes containing a $K_L^0$ meson.
+
+Additionally, to increase the yield of $K^+K^-\pi^+\pi^-$ vs $K_S^0\pi^+\pi^-$ DTs, events where a charged kaon is not reconstructed are also considered. The tag mode $D\to K_S^0\pi^+\pi^-$ is first reconstructed, and it is required that there are exactly three remaining tracks, identified as a kaon and two oppositely charged pions. The momentum of the charged kaon that is not reconstructed is inferred from the missing momentum. To reduce the background from $D\to K^-\pi^+\pi^-\pi^+\pi^0$ decays, it is required that there are no $\pi^0$ candidates in the event.
+
+In the $K_{S, L}^0\pi^+\pi^-$ tags, a Kalman kinematic fit~\cite{KalmanFit_cite} is performed to improve the resolution of the final-state particle momenta by constraining the $K_{S, L}^0$ and $D$ invariant masses to their known values~\cite{pdg}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Yield determination with $M_{\rm BC}$ fit}
+\noindent The ST yield of each fully reconstructed tag mode is determined by a maximum-likelihood fit of the beam-constrained mass $M_{\rm BC} = \sqrt{E_{\rm beam}^2 - \big\lvert\sum_i\vec{p}_i\big\rvert^2}$, where the sum runs over the momenta $\vec{p}_i$ of all the $D$ decay products. The signal shape is obtained from simulation, but convolved with a Gaussian function to account for differences in resolution between data and simulation. The width of the Gaussian function is a free parameter in the fit and the difference in resolution between data and simulation was found to be a few hundred ${\rm keV}/c^2$. Since the difference is small, no further correction to the simulation is performed. The combinatorial background is modelled by an ARGUS function~\cite{cite:Argus}. The $M_{\rm BC}$ distributions and the fitted shapes are shown in Fig.~\ref{figure:ST_MBC}. In all cases the fit quality is found to be good.
+
+For the partially reconstructed tag mode $D\to K_L^0\pi^0$, the ST yield cannot be measured directly. Nonetheless, an effective ST reconstruction efficiency is calculated from $\epsilon_{\rm ST}(K_L\pi^0) = \epsilon_{\rm DT}(KK\pi\pi|K_L\pi^0)/\epsilon_{\rm ST}(KK\pi\pi)$. The effective ST yield is then calculated from this efficiency, the branching fraction~\cite{cite:deltaKpi}, and $N_{D\bar{D}}$, using Eq.~\eqref{equation:ST_yield}. The ST yields and their efficiencies, determined from simulation, are presented in Table~\ref{table:Single_tag_yields_efficiencies}. The ST yields are in good agreement with the results from Refs.~\cite{cite:KSpipiStrongPhase, cite:cisiKSKK, BESIII:fourpi}
+
+The level of peaking background in the fully reconstructed tag modes is around $1\%$ or less. In tag modes containing a $K_L^0$ there is a larger contamination from $K_S^0\to\pi^0\pi^0$ decays, where the $\pi^0$ mesons are not reconstructed. This peaking background is found from simulation to be around $6\%$ of the signal yield. The shapes of peaking backgrounds are fixed from simulation samples, while the yields are calculated from the branching fractions and efficiencies, relative to that of the signal yield.
+
+Similarly, for fully reconstructed DT events, the $M_{\rm BC}$ on the signal side is fitted. The approach is identical to that for ST candidates, but corrections are applied to the peaking-background estimates to account for enhancements and suppressions due to quantum correlations. The quantum-correlation corrections are calculated using knowledge of the $C\!P$ contents of both the signal and tag modes. The $C\!P$ content of $D^0\to K^+K^-\pi^+\pi^-$ is obtained from the amplitude model in Ref.~\cite{LHCb-PAPER-2018-041}. Fits where the signal or tag modes are split into bins of phase space are performed simultaneously, such that signal-shape parameters are shared between all bins, while the yields are varied independently in each bin. For partially reconstructed tag modes, a fit of the missing-mass squared $M_{\rm miss}^2$ of the missing particle is performed instead. Fig.~\ref{figure:DT_MBC} shows examples of DT fits of the three $C\!P$ tags with highest statistics.
+
+\begin{figure*}[htb]
+    \centering
+    \includegraphics[height=4.2cm,trim={1.0cm 13.5cm 2.5cm 1.5cm},clip]{Plots/DoubleTagYield_DoubleTag_CP_KKpipi_vs_KK_SignalBin0.png}
+    \includegraphics[height=4.2cm,trim={5.5cm 13.5cm 2.5cm 1.5cm},clip]{Plots/DoubleTagYield_DoubleTag_CP_KKpipi_vs_pipipi0_SignalBin0.png}
+    \includegraphics[height=4.2cm,trim={5.5cm 13.5cm 2.5cm 1.5cm},clip]{Plots/DoubleTagYield_DoubleTag_CP_KKpipi_vs_KSpi0_SignalBin0.png}
+    \caption{DT $M_{\rm BC}$ distributions of fully reconstructed DT candidates. Data points are shown in black with error bars and the red curve is the fit result. The solid blue shape is combinatorial background. The green, stacked on top of the blue, is peaking background.}
+    \label{figure:DT_MBC}
+\end{figure*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Strong-phase fit}
+\noindent Because of the statistically limited size of the BESIII dataset, the analysis is initially performed inclusively to determine the $C\!P$-even fraction $F_+$ of $D^0\to K^+K^-\pi^+\pi^-$. A maximum-likelihood fit is performed to the phase space inclusive ST and DT yields of $C\!P$ tags, assuming the relation given by Eq.~\eqref{equation:DT_ST_yield_ratio_FPlus}. The uncertainties are assumed to follow a Gaussian distribution. The branching fraction $\mathcal{B}(KK\pi\pi)$ and the $C\!P$-even fraction $F_+$ are free parameters in the fit. Figure~\ref{figure:FPlus_CP_tags} shows the ratio of DT yields to ST yields for each tag after efficiency corrections. Physically, this represents the effective branching fraction of $D\to K^+K^-\pi^+\pi^-$, where the $D$ meson is prepared in a $C\!P$ eigenstate. The fitted $C\!P$-even fraction is $F_+ = 0.704 \pm 0.042 \pm 0.028$, where the first uncertainty is from the statistical uncertainties of ST and DT yields and the second uncertainty is the systematic uncertainty. The obtained branching fraction is $\mathcal{B}(KK\pi\pi) = (2.8 \pm 0.3)\times 10^{-3}$, where the uncertainty is statistical. It is consistent with the current value from the Particle Data Group (PDG)~\cite{pdg}.
+
+\begin{figure*}[htb]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Plots/CPeven_fraction_combination_CPtags.png}
+    \caption{The effective branching fraction (BF) of $D\to K^+K^-\pi^+\pi^-$ measured against $C\!P$-odd (top), $D\to\pi^+\pi^-\pi^0$ and $C\!P$-even (bottom) tags. The black dotted lines indicate the values expected from the fit.}
+    \label{figure:FPlus_CP_tags}
+\end{figure*}
+
+A similar fit is performed for the modes $K^0_{S, L}\pi^+\pi^-$, using the relation in Eq.~\eqref{equation:DT_ST_yield_ratio_K0pipi_FPlus}, and the result is $F_+ = 0.798 \pm 0.077 \pm 0.019$. This is consistent with the $C\!P$ tags and combined, the final measurement of the $C\!P$-even fraction is $F_+ = 0.730 \pm 0.037 \pm 0.021$. This is the first measurement of $F_+$ in this channel.
+
+In 2022, $\SI{5}{\per\femto\barn}$ of $\psi(3770)$ was successfully collected at BESIII, bringing the total dataset to $\SI{8}{\per\femto\barn}$. Using the same selection on this larger dataset, a first measurement of $c_i$ and $s_i$ will be performed. The yield determination will follow an identical strategy and the strong-phase fit will use Eqs.~\eqref{equation:DT_ST_yield_ratio} and \eqref{equation:DT_ST_yield_ratio_K0pipi}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Analysis of \texorpdfstring{$B^\pm\to[K^+K^-\pi^+\pi^-]_Dh^\pm$}{B2DhD2KKpipi} at LHCb}
@@ -350,7 +399,7 @@ To improve the resolution of the momenta of the $D$-decay products and the invar
 
 \begin{figure}[tb]
     \centering
-    \includegraphics[width=1.0\textwidth,trim={0 2.9cm 0 0},clip]{example-image-a}
+    \includegraphics[width=1.0\textwidth,trim={0 2.9cm 0 0},clip]{Plots/d2kkpipi_fiveL_allDP.pdf}
     \caption{Invariant-mass distributions for the (left) $B^\pm\to DK^\pm$ selection and (right) $B^\pm\to D\pi^\pm$ selection, with $D\to K^+K^-\pi^+\pi^-$. The data is shown as black points and the blue curve is the fit result. The square brackets in the legend denote particles that are not reconstructed.}
     \label{figure:Global_fit}
 \end{figure}
@@ -412,12 +461,12 @@ The fitted $C\!P$-violating observables are listed in Table~\ref{table:GGSZ_obse
 \begin{figure}[tb]
     \centering
     \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=1\textwidth]{example-image-a}
+        \includegraphics[width=1\textwidth]{Plots/B2DK_CP_Observables_Contours.png}
         \caption{$B^\pm\to DK^\pm$.}
         \label{figure:CP_observables_DK}
     \end{subfigure}%
     \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=1\textwidth]{example-image-a}
+        \includegraphics[width=1\textwidth]{Plots/B2Dpi_CP_Observables_Contours.png}
         \caption{$B^\pm\to D\pi^\pm$.}
         \label{figure:CP_observables_Dpi}
     \end{subfigure}
@@ -425,60 +474,40 @@ The fitted $C\!P$-violating observables are listed in Table~\ref{table:GGSZ_obse
     \label{figure:CP_observables}
 \end{figure}
 
-The $C\!P$-violation effects can be illustrated directly by considering the asymmetries in each bin. This information is obtained from an alternative fit where the signal yields, instead of the $C\!P$-violating observables, are determined. The bin asymmetries, $(N_i^- - N_{-i}^+)/(N_i^- + N_{-i}^+)$, calculated from these yields are shown in Fig.~\ref{figure:Bin_asymmetries}. The bin yields are normalised separately for $B^-$ and $B^+$, so that only bin-to-bin variations are apparent. Some of those for $B^\pm\to DK^\pm$ are significant, and exhibit a non-trivial distribution, which is driven by the variation in the strong-phase difference between $D^0$ and $\bar{D^0}$ decays. In the $B^\pm\to D\pi^\pm$ mode, there is a lower sensitivity to $C\!P$ violation and therefore no such behaviour is seen.
+The $C\!P$-violation effects can be illustrated directly by considering the asymmetries in each bin. This information is obtained from an alternative fit where the signal yields, instead of the $C\!P$-violating observables, are determined. The bin asymmetries, $(N_i^- - N_{-i}^+)/(N_i^- + N_{-i}^+)$, calculated from these yields are shown in Fig.~\ref{figure:Bin_asymmetries}. The bin yields are normalised separately for $B^-$ and $B^+$, so that only bin-to-bin variations are apparent. Some of those for $B^\pm\to DK^\pm$ are significant, and exhibit a non-trivial distribution, which is driven by the variation in the strong-phase difference between $D^0$ and $\bar{D^0}$ decays. In the $B^\pm\to D\pi^\pm$ mode, there is a lower sensitivity to $C\!P$ violation and therefore no such behaviour is seen. Although the results shown in Fig.~\cite{figure:CP_observables} depend on strong-phases predicted from the LHCb model, the $C\!P$-violation seen in Fig.~\cite{figure:Bin_asymmetries_DK} are model-independent.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Double-tag analysis of $D^0\to K^+K^-\pi^+\pi^-$ at BESIII}
-\subsection{The BESIII detector}
-\noindent BESIII \cite{cite_BESIII} is a general purpose solenoidal detector. The parts most relevant to this analysis are the Helium gas drift chamber for measuring the momenta and $\dd{E}/\dd{x}$ of charged particles, a time of flight system for particle ID and an electromagnetic calorimeter to measure shower energies. The dataset currently under consideration has $\SI{2.9}{\per\femto\barn}$ of $e^+e^-\to\psi(3770)$ events, but this will grow to $\SI{20}{\per\femto\barn}$ over the next two years.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Single- and double-tag reconstruction}
-\noindent Charged tracks detected in the MDC are required to be within a polar angle ($\theta$) range of $|\!\cos\theta|<0.93$, where $\theta$ is defined with respect to the $z$-axis, which is the symmetry axis of the MDC. For charged tracks not originating from $K_S^0$ decays, the distance of closest approach to the interaction point (IP), $|V_{z}|$, must be less than 10\,cm along the $z$-axis, and less than 1\,cm in the transverse plane.
-
-Photon candidates are identified using showers in the EMC. The deposited energy of each shower must be more than 25~MeV in the barrel region ($|\cos \theta|< 0.80$) and more than 50~MeV in the end-cap region ($0.86 <|\!\cos \theta|< 0.92$). To exclude showers that originate from charged tracks, the angle subtended by the EMC shower and the position of the closest charged track at the EMC must be greater than 10 degrees as measured from the IP. To suppress electronic noise and showers unrelated to the event, the difference between the EMC time and the event-start time is required to be within [0, 700]\,ns.
-
-Particle identification~(PID) for charged tracks combines measurements of the d$E$/d$x$ in the MDC, and the time of flight as measured by the TOF system, to form likelihoods $\mathcal{L}(h)$ for each hadron hypothesis $h$ $(h=K,\pi)$. Charged kaons and pions are identified by comparing the likelihoods for the kaon and pion hypotheses, $\mathcal{L}(K)>\mathcal{L}(\pi)$ and $\mathcal{L}(\pi)>\mathcal{L}(K)$, respectively.
-
-Each $K_{S}^0$ candidate is reconstructed from two oppositely charged tracks satisfying $|V_{z}|<$ 20~cm. The two charged tracks are assigned the pion hypothesis without imposing PID criteria. They are constrained to originate from a common vertex and are required to have an invariant mass within 12~MeV$/c^{2}$ of the known $K^0_{S}$ mass~\cite{pdg}. The decay length of the $K^0_S$ candidate is required to be greater than twice the vertex resolution away from the IP.
-
-Candidate $\pi^0$ and $\eta$ mesons are reconstructed through the decays $\pi^0\to\gamma\gamma$ and $\eta\to\gamma\gamma$, with their di-photon invariant masses required to be within $[115, 150]$ and $[480, 580]$~MeV$/c^2$, respectively. The $\eta^\prime$ meson is reconstructed through  $\eta^\prime\to\pi^+\pi^-\eta$ and $\rho^0(\pi^+\pi^-)\gamma$, with the invariant masses of the decay products within $[940, 976]$ and $[940, 970]$~MeV$/c^2$. The invariant mass of the pion pair in the $\rho^0$ decay must lie within $[626, 924]$~MeV$/c^2$.
-
-In the reconstruction of $D\to\pi^+\pi^-\pi^0$ and $D\to K^+K^-\pi^+\pi^-$ decays, the $\pi^+\pi^-$ pair is required to originate from a vertex within twice the vertex resolution from the IP, in order to reduce backgrounds from $D\to K_S^0\pi^0$ and $D\to K_S^0K^+K^-$, respectively. For $\pi^+\pi^-\pi^0$, the $\pi^+\pi^-$ invariant mass is required to be more than $18$~MeV$/c^2$ away from the known $K_S^0$ mass. For $K^+K^-\pi^+\pi^-$, the $\pi^+\pi^-$ mass must fall outside $[477, 507]$~MeV$/c^2$.
-
-For fully reconstructed tags, $\Delta E = E_D - \sqrt{s}/2$, where $E_D$ is the reconstructed energy of the $D$ meson, is required to be within $3\sigma$ of the signal peak. This requirement removes combinatorial background. In the tags containing a $K_L^0$, a partial reconstruction is performed where the signal $D\to K^+K^-\pi^+\pi^-$ is first reconstructed. From the remaining tracks and showers, the tag mode is reconstructed without the $K_L^0$ meson. It is required that there are no additional charged tracks or $\pi^0$ candidates. The $K_L^0$ momentum is then inferred from the missing momentum of the event. Since there is a missing particle, the ST yield cannot be measured in tag modes containing a $K_L^0$ meson.
-
-Additionally, to increase the yield of $K^+K^-\pi^+\pi^-$ vs $K_S^0\pi^+\pi^-$ DTs, events where a charged kaon is not reconstructed are also considered. The tag mode $D\to K_S^0\pi^+\pi^-$ is first reconstructed, and it is required that there are exactly three remaining tracks, identified as a kaon and two oppositely charged pions. The momentum of the charged kaon that is not reconstructed is inferred from the missing momentum. To reduce the background from $D\to K^-\pi^+\pi^-\pi^+\pi^0$ decays, it is required that there are no $\pi^0$ candidates in the event.
-
-In the $K_{S, L}^0\pi^+\pi^-$ tags, a Kalman kinematic fit~\cite{KalmanFit_cite} is performed to improve the resolution of the final-state particle momenta by constraining the $K_{S, L}^0$ and $D$ invariant masses to their known values~\cite{pdg}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Yield determination with $M_{\rm BC}$ fit}
-\noindent The ST yield of each fully reconstructed tag mode is determined by a maximum-likelihood fit of the beam-constrained mass $M_{\rm BC} = \sqrt{E_{\rm beam}^2 - \big\lvert\sum_i\vec{p}_i\big\rvert^2}$, where the sum runs over the momenta $\vec{p}_i$ of all the $D$ decay products. The signal shape is obtained from simulation, but convolved with a Gaussian function to account for differences in resolution between data and simulation. The width of the Gaussian function is a free parameter in the fit and the difference in resolution between data and simulation was found to be a few hundred ${\rm keV}/c^2$. Since the difference is small, no further correction to the simulation is performed. The combinatorial background is modelled by an ARGUS function~\cite{cite:Argus}. The $M_{\rm BC}$ distributions and the fitted shapes are shown in Fig.~\ref{figure:ST_MBC}. In all cases the fit quality is found to be good.
-
-For the partially reconstructed tag mode $D\to K_L^0\pi^0$, the ST yield cannot be measured directly. Nonetheless, an effective ST reconstruction efficiency is calculated from $\epsilon_{\rm ST}(K_L\pi^0) = \epsilon_{\rm DT}(KK\pi\pi|K_L\pi^0)/\epsilon_{\rm ST}(KK\pi\pi)$. The effective ST yield is then calculated from this efficiency, the branching fraction~\cite{cite:deltaKpi}, and $N_{D\bar{D}}$, using Eq.~\eqref{equation:ST_yield}. The ST yields and their efficiencies, determined from simulation, are presented in Table~\ref{table:Single_tag_yields_efficiencies}. The ST yields are in good agreement with the results from Refs.~\cite{cite:KSpipiStrongPhase, cite:cisiKSKK, BESIII:fourpi}
-
-The level of peaking background in the fully reconstructed tag modes is around $1\%$ or less. In tag modes containing a $K_L^0$ there is a larger contamination from $K_S^0\to\pi^0\pi^0$ decays, where the $\pi^0$ mesons are not reconstructed. This peaking background is found from simulation to be around $6\%$ of the signal yield. The shapes of peaking backgrounds are fixed from simulation samples, while the yields are calculated from the branching fractions and efficiencies, relative to that of the signal yield.
-
-Similarly, for fully reconstructed DT events, the $M_{\rm BC}$ on the signal side is fitted. The approach is identical to that for ST candidates, but corrections are applied to the peaking-background estimates to account for enhancements and suppressions due to quantum correlations. The quantum-correlation corrections are calculated using knowledge of the $C\!P$ contents of both the signal and tag modes. The $C\!P$ content of $D^0\to K^+K^-\pi^+\pi^-$ is obtained from the amplitude model in Ref.~\cite{LHCb-PAPER-2018-041}.
-
-For partially reconstructed tag modes, a fit of the missing-mass squared $M_{\rm miss}^2$ of the missing particle is performed instead. In the $K_{S, L}^0\pi^+\pi^-$ tag modes, which are split into bins of phase space, a simultaneous fit is performed where the signal-shape parameters are shared between all bins, while the yield of signal and combinatorial backgrounds are varied independently in each bin. Figure~\ref{figure:DT_MBC} shows the signal $M_{\rm BC}$ distributions of fully reconstructed modes in data, along with the fitted shapes. The corresponding $M_{\rm miss}^2$ distributions for partially reconstructed modes are shown in Fig.~\ref{figure:DT_MMiss2}. For the $K_{S, L}^0\pi^+\pi^-$ tags, only the result in one bin of phase space is shown, but the other bins are very similar. The fitted yields and their efficiencies, as determined from simulation, are listed in Table~\ref{table:Double_tag_yields_efficiencies_CP} and Table~\ref{table:Double_tag_yields_efficiencies_K0pipi}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Strong-phase fit}
-A maximum-likelihood fit is performed to the ST and DT yields of $C\!P$ tags listed in Table~\ref{table:Single_tag_yields_efficiencies} and Table~\ref{table:Double_tag_yields_efficiencies_CP}, respectively, assuming the relation given by Eq.~\eqref{equation:DT_ST_yield_ratio}. The uncertainties are assumed to follow a Gaussian distribution. The branching fraction $\mathcal{B}(KK\pi\pi)$ and the $C\!P$-even fraction $F_+$ are free parameters in the fit. Figure~\ref{figure:FPlus_CP_tags} shows the ratio of DT yields to ST yields for each tag after efficiency corrections. Physically, this represents the effective branching fraction of $D\to K^+K^-\pi^+\pi^-$, where the $D$ meson is prepared in a $C\!P$ eigenstate. The fitted $C\!P$-even fraction is $F_+ = 0.704 \pm 0.042 \pm 0.028$, where the first uncertainty is from the statistical uncertainties of ST and DT yields and the second uncertainty is the systematic uncertainty, discussed in Section~\ref{section:Systematic_uncertainties}. The obtained branching fraction is $\mathcal{B}(KK\pi\pi) = (2.8 \pm 0.3)\times 10^{-3}$, where the uncertainty is statistical. It is consistent with the current value from the Particle Data Group (PDG)~\cite{pdg}.
-
-\begin{figure*}[htb]
+\begin{figure}[tb]
     \centering
-    \includegraphics[width=0.5\textwidth]{example-image-a}
-    \caption{The effective branching fraction (BF) of $D\to K^+K^-\pi^+\pi^-$ measured against $C\!P$-odd (top), $D\to\pi^+\pi^-\pi^0$ and $C\!P$-even (bottom) tags. The black dotted lines indicate the values expected from the fit.}
-    \label{figure:FPlus_CP_tags}
-\end{figure*}
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=1\textwidth]{Plots/BinAsymmetries_dk.png}
+        \caption{$B^\pm\to DK^\pm$.}
+        \label{figure:Bin_asymmetries_DK}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=1\textwidth]{Plots/BinAsymmetries_dpi.png}
+        \caption{$B^\pm\to D\pi^\pm$.}
+        \label{figure:Bin_asymmetries_Dpi}
+    \end{subfigure}
+    \caption{The $B^\pm\to[K^+K^-\pi^+\pi^-]_D h^\pm$ fractional bin asymmetries in each phase-space bin. The solid black line is the prediction using the fitted $C\!P$-violating observables. The dashed line indicates the asymmetry prediction in the absence of $C\!P$ violation.}
+    \label{figure:Bin_asymmetries}
+\end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Interpretation in terms of \texorpdfstring{$\gamma$}{gamma}}
+\noindent The $C\!P$-violating observables in Table~\cite{table:GGSZ_observables} can be expressed in terms of $\gamma$ and other physics parameters using Eq.~\eqref{equation:CP_observables}, using a maximum likelihood fit. The result is
+
+\begin{align*}
+    \gamma &= (116^{+12}_{-14})^\circ, \\
+    \delta_B^{DK} &= (81^{+14}_{-13})^\circ, \\
+    r_B^{DK} &= 0.110^{+0.020}_{-0.020}, \\
+    \delta_B^{D\pi} &= (298^{+62}_{-118})^\circ, \\
+    r_B^{D\pi} &= 0.0041^{+0.0054}_{-0.0041}.
+\end{align*}
+It should be stressed that currently the parameters from Table~\cite{table:GGSZ_observables} depend on model-predicted strong-phase parameters, which may have systematic uncertainties associated with the model that cannot be evaluated. It is therefore not unexpected that the value of $\gamma$ deviates from the world average by around $3\sigma$. In fact, it emphasises the importantance of the ongoing model-independent measurement of $c_i$ and $s_i$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion and future work}
-\noindent The current results at both LHCb and BESIII are consistent with expectations. The next steps in the LHCb analysis are cut optimizations and systematics studies. For BESIII, all tag mode selections must be finalized and the yields determined on the current and future datasets. The analyses will be combined into a first $\gamma$ determination in this channel.
+\noindent A first measurement of $\gamma$ in the channel $B^\pm\to[K^+K^-\pi^+\pi^-]_Dh^\pm$ has been presented. The measurement combines a strong-phase analysis of the $D$-meson decay from BESIII and a $C\!P$-violation study of $B^\pm\to Dh^\pm$ from LHCb. This measurement will complement the current set of $\gamma$ measurements using other $B$-decay modes. In addition, the strong-phase measurements of the $D$ decay will provide important inputs for $D^0$-$\bar{D^0}$ mixing and charm $C\!P$ violation studies.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                          
 \bibliography{references}
